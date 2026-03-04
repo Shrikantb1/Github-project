@@ -1,4 +1,5 @@
 # Library Management System
+# Developer2 Branch - Added book returning feature
 
 def add_book(library, book_name):
     library.append(book_name)
@@ -31,6 +32,12 @@ def count_books(library):
     print(f"Total books in library: {len(library)}")
     return len(library)
 
+# Developer2 added this new function
+def return_book(library, book_name, member_name):
+    library.append(book_name)
+    print(f"Book '{book_name}' returned by {member_name} successfully.")
+    return library
+
 # Main
 if __name__ == "__main__":
     library = []
@@ -41,4 +48,5 @@ if __name__ == "__main__":
     count_books(library)
     search_book(library, "Python Basics")
     library = remove_book(library, "Git & GitHub Guide")
+    library = return_book(library, "Python Basics", "Shrikant")
     display_books(library)
