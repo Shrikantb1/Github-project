@@ -1,4 +1,5 @@
 # Library Management System
+# Developer1 Branch - Added book issuing feature
 
 def add_book(library, book_name):
     library.append(book_name)
@@ -31,6 +32,15 @@ def count_books(library):
     print(f"Total books in library: {len(library)}")
     return len(library)
 
+# Developer1 added this new function
+def issue_book(library, book_name, member_name):
+    if book_name in library:
+        library.remove(book_name)
+        print(f"Book '{book_name}' issued to {member_name} successfully.")
+    else:
+        print(f"Book '{book_name}' is not available for issuing.")
+    return library
+
 # Main
 if __name__ == "__main__":
     library = []
@@ -41,4 +51,5 @@ if __name__ == "__main__":
     count_books(library)
     search_book(library, "Python Basics")
     library = remove_book(library, "Git & GitHub Guide")
+    library = issue_book(library, "Python Basics", "Shrikant")
     display_books(library)
